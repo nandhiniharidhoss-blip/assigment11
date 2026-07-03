@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Page</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 50px;
+            display: flex;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        input {
+            border: none;
+            outline: none;
+            width: 300px;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        button {
+            border: none;
+            background: #0077ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #005bcc;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Google Style Search</h1>
+
+    <!-- FORMSPREE FORM -->
+    <form action="https://formspree.io/f/xgojaevr" method="POST">
+
+        <input type="text" name="search" placeholder="Search anything..." required>
+
+        <button type="submit">Search</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
