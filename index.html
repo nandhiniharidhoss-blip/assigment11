@@ -1,74 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Search Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Box</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background: linear-gradient(to right, #4facfe, #00f2fe);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
 
-        .box {
-            text-align: center;
-        }
+.container{
+    text-align:center;
+}
 
-        h1 {
-            color: white;
-            margin-bottom: 20px;
-        }
+.logo{
+    font-size:60px;
+    color:#4285F4;
+    font-weight:bold;
+    margin-bottom:30px;
+}
 
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 50px;
-            display: flex;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        }
+input[type=text]{
+    width:600px;
+    max-width:90%;
+    padding:15px 20px;
+    border:1px solid #dcdcdc;
+    border-radius:30px;
+    font-size:18px;
+    outline:none;
+}
 
-        input {
-            border: none;
-            outline: none;
-            width: 300px;
-            font-size: 16px;
-            padding: 10px;
-        }
+input[type=text]:focus{
+    box-shadow:0 0 5px #4285F4;
+}
 
-        button {
-            border: none;
-            background: #0077ff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
+button{
+    margin-top:20px;
+    padding:12px 35px;
+    background:#4285F4;
+    color:white;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+}
 
-        button:hover {
-            background: #005bcc;
-        }
-    </style>
+button:hover{
+    background:#3367d6;
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="box">
+<div class="container">
 
-    <h1>Google Style Search</h1>
+<div class="logo">Search</div>
 
-    <!-- FORMSPREE FORM -->
-    <form action="https://formspree.io/f/xgojaevr" method="POST">
+<form action="https://formspree.io/f/mwvdyvao" method="POST">
 
-        <input type="text" name="search" placeholder="Search anything..." required>
+<input
+type="text"
+name="User Entered Text"
+placeholder="Search here..."
+required>
 
-        <button type="submit">Search</button>
+<br>
 
-    </form>
+<button type="submit">
+Search
+</button>
+
+</form>
 
 </div>
 
